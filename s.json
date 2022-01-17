@@ -1,0 +1,26 @@
+{
+  "@uri": "https://reststop.randomhouse.com/resources/works/286582",
+  "authorweb": "STEINBECK, JOHN",
+  "titles": {
+    "isbn": [
+      {
+        "@formatcode": "DN",
+        "$": "9781101538524"
+      },
+      {
+        "@formatcode": "EL",
+        "$": "9781440626609"
+      },
+      {
+        "@formatcode": "TR",
+        "$": "9780142437414"
+      }
+    ]
+  },
+  "onsaledate": "2002-02-04T00:00:00-05:00",
+  "titleAuth": "America and Americans and Selected Nonfiction : John Steinbeck",
+  "titleSubtitleAuth": "America and Americans and Selected Nonfiction :  : John Steinbeck",
+  "titleshort": "AMER & AMERNS & SEL NONFICTION",
+  "titleweb": "America and Americans and Selected Nonfiction",
+  "workid": "286582"
+}
