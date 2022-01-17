@@ -21,13 +21,14 @@ def book():
     data = client.get(url)
     books = []
     for uri in json.loads(data)['work']:
-        books.append(uri['@uri'])
-    print(books)
-    d = json.loads(client.get(books[0]))
-    print(d)
-    t = f"https://covers.openlibrary.org/b/isbn/{d['titles']['isbn'][0]['$']}-M.jpg"
-    print(t)
-    return render_template('base.html', data=t, default_image_url='/static/images/default-placeholder.png')
+        d = json.loads(client.get(uri['@uri']))
+        print(d)
+        code = d['titles']['isbn'][0]['$']
+        t = f"https://covers.openlibrary.org/b/isbn/{code}-M.jpg"
+        books.append(t)
+        print(books)
+    # print(books)
+    return render_template('books.html', data=books, default_image_url='/static/images/default-placeholder.png')
 
 
 if __name__ == '__main__':

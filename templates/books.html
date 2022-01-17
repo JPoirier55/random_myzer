@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="new"></div>
+<script>
+    let books = {{ data | tojson }};
+    console.log(books)
+    for(book in books) {
+        createImg(book);
+    }
+
+    function createImg(src) {
+        var img = document.createElement('img');
+        img.src = src;
+        var poll = setInterval(function () {
+            if (img.naturalWidth) {
+                clearInterval(poll);
+                console.log(img.naturalWidth, img.naturalHeight);
+            }
+        }, 10);
+
+        img.onload = function () {
+            console.log('Fully loaded');
+            if(img.naturalWidth < 10) {
+                img.src = '{{ default_image_url }}'
+            }
+            console.log(img.src)
+        }
+
+        let element = document.getElementById("new");
+        element.appendChild(img);
+    }
+
+</script>
+{% endblock %}

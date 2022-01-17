@@ -5,46 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div id="new"></div>
+{% block body %}
+{% endblock %}
 </body>
-<script>
-    var img = document.createElement('img');
-
-    img.src = '{{ data }}';
-
-    var poll = setInterval(function () {
-        if (img.naturalWidth) {
-            clearInterval(poll);
-            console.log(img.naturalWidth, img.naturalHeight);
-        }
-    }, 10);
-
-    img.onload = function () {
-        console.log('Fully loaded');
-        if(img.naturalWidth < 10) {
-            img.src = '{{ default_image_url }}'
-            // img.height = 270
-            // img.width = 180
-        }
-        console.log(img.src)
-    }
-
-    let element = document.getElementById("new");
-    element.appendChild(img);
-
-
-
-    // function loadImgUrl(){
-    //     let img = document.getElementById("pic");
-    //     console.log(img)
-    //     let height = img.height;
-    //     let width = img.width;
-    //     console.log(img.height);
-    //     console.log(img.width);
-    //     // if(height < 10 && width < 10) {
-    //     //     img.src =  "/src/default-placeholder.png"
-    //     // }
-    // }
-    // loadImgUrl()
-</script>
 </html>
